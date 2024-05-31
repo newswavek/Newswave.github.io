@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment - NEWS WAVE</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #7A288A;
+        }
+        .card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #575757;
+        }
+        .collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expanded {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+        footer p {
+            font-size: 16px;
+        }
+.comment-box-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #7A288A;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button.post-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.post-button:hover {
+    background: linear-gradient(90deg, #0033FF, #7A288A, #FF69B4);
+}
+
+#commentSection {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment strong {
+    color: #7A288A;
+}
+
+.comment p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="Politics.html">Politics</a>
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="Mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Entertainment Section</h2>
+            <p>Get the latest entertainment news, celebrity gossip, and the hottest movie and TV show reviews.</p>
+        </div>
+        <div class="card">
+	<h2>THE BATTLE FOR THE CHARTS</h2>
+            <img src="images/charts.jpg" alt="charts" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <p class="story-summary">Taylor Swift and Billie Eilish Battle for the #1 on the Billboard Hot 200.</p>
+                <div class="collapse" id="story1">
+                    <p>In the digital age of Pop Music, two reigning queens—Taylor Swift and Billie Eilish—held the charts in their grasp. Their albums, like viral memes, swept across streaming platforms, pulling in millions of listeners. A chart-topping showdown that would echo through the hashtags and playlists of generations.
+<br><br>
+The New York Times chronicled the Swift-Eilish Cold War. Their fan armies mobilized. Billie’s album danced through Spotify’s Daily Top Songs USA chart, each track amassing over a million spins. Taylor’s loyal subjects clung to their vinyl editions, invoking ancient rituals to keep The Tortured Poets Department atop the Billboard 200 for five weeks straight.
+<br><br>
+Billie’s fans streamed her album like wildfire, while Taylor’s cult-like followers clung to their AirPods, replaying the dead poets' verses. The scrolls revealed the truth: Taylor Swift’s reign remained unshaken for now. Her followers managed fended off Billie, like a firewall against a digital dragon.
+<br><br>
+But the war is far from over, with Billie amassing over 25 million new monthly listeners and making  her the 4th most listened-to artist in the world, Taylor is sure to feel the heat as streams for "Hit Me Hard and Soft" rise to new-time highs for Billie.
+</p>
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story1', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+        <h2>DRAKE VS KENDRICK LAMAR</h2>  
+	  <img src="images/vs.jpg" alt="vs" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                          <p class="story-summary">The rap battle of the century between Kendrick Lamar and Drake takes a nasty turn.</p>
+                <div class="collapse" id="story2">
+                    <p>It all began with a cryptic verse. Kendrick’s voice echoed through the alleyways, challenging Drake’s throne. His flow was sharp, slicing through the night air like a switchblade. “Tryna strike a chord, and it’s probably A-minor,” he spat, insinuating dark secrets. The crowd leaned in, hungry for blood.
+<br><br>
+Drake, never one to back down, stepped into the spotlight. His mic crackled with electricity. “Taylor Swift is your new top,” he fired back, mocking Kendrick’s boss. “And if you 'boutta drop, she gotta approve.” The crowd gasped. Shots fired, and the war was on.
+<br><br>
+The city buzzed. Fans dissected every syllable. Kendrick dropped “Like That,” a venomous verse that questioned Drake’s integrity. Drake countered with “Push Ups,” belittling Kendrick’s legacy. Streams skyrocketed, and the world held its breath to see who would fire the next shot.
+<br><br>
+But Kendrick wasn’t done. He unleashed “Not Like Us,” a lyrical hurricane. Accusations of domestic violence, secret children, and more—unevidenced but scorching. Drake’s denial echoed across the airwaves, but the damage was done. The rap world was in shock.
+<br><br>
+As the final beat dropped, Kendrick stepped forward. “All in all, Kendrick won this battle,” declared Joseph “JP” Patterson, editor-in-chief of Complex UK. “Both dragged each other to hell with their jabs, but it’s undeniable who came out on top.”
+</p>
+
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story2', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+	<h2> Marvel's Guardians of the Galaxy Vol. 3 Hits Theaters</h2>
+            <img src="images/Guard.jpg" alt="Guard" style="width:80%; border-radius: 10px;">
+            <div class="content"> 
+          <p class="story-summary">Marvel's Guardians of the Galaxy Vol. 3, the final installment of the beloved franchise, hit theaters on May 5th.</p>
+                <div class="collapse" id="story3">
+                    <p>The film, directed by James Gunn, follows the Guardians as they face their biggest challenge yet: saving Rocket Raccoon's life. (May 8, 2024)
+The film has received rave reviews for its emotional depth, stunning visuals, and satisfying conclusion to the trilogy. 
+
+<br><br>
+Fans are praising the cast, particularly Chris Pratt and Bradley Cooper, for their performances.
+The Guardians of the Galaxy franchise has been a staple of the Marvel Cinematic Universe, known for its humor, heart, and nostalgic soundtrack. The third installment is a fitting conclusion to the series, tying up loose ends and giving fans the closure they've been waiting for.
+James Gunn's direction has been praised for its sensitivity and attention to detail, bringing the characters to life in a way that feels authentic and true to the franchise. The film's themes of family, love, and sacrifice are timeless and universal.
+
+<br><br>
+The Guardians of the Galaxy Vol. 3 is a must-see for fans of the franchise and the Marvel Cinematic Universe. With its stunning visuals, heartwarming moments, and satisfying conclusion, it's a fitting end to a beloved trilogy.
+The film's success is a testament to the power of storytelling and the impact that movies can have on our lives. The Guardians of the Galaxy franchise will be remembered for years to come as a shining example of what makes Marvel so beloved.
+</p>
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story3', this)">Read More</a>
+            </div>
+		</div>
+        <div class="card">
+	<h2>Beyoncé's Renaissance World Tour Kicks Off</h2>
+            <img src="images/bee.jpg" alt="bee" style="width:80%; border-radius: 10px;">
+            <div class="content"> 
+          <p class="story-summary">Beyoncé's highly anticipated Renaissance World Tour kicked off on May 10th in Stockholm, Sweden.</p>
+                <div class="collapse" id="story4">
+                    <p>
+The tour, which supports her 2022 album Renaissance, features a mesmerizing stage production and a setlist of hits old and new. Fans are raving about the show, which includes a tribute to her late uncle and a surprise appearance by Jay-Z. (May 12, 2024)
+The tour has been praised for its high-energy performance, stunning visuals, and commitment to inclusivity. 
+<br><br>
+Beyoncé's music has always been a source of empowerment for her fans, and this tour is no exception. With dates scheduled through October, the Renaissance World Tour is a must-see event for music lovers everywhere.
+Beyoncé's impact on the music industry is undeniable, and this tour is a testament to her dedication to her craft. 
+<br><br>
+Her music has inspired countless artists and fans alike, and her live performances are always a testament to her talent and work ethic.
+The Renaissance World Tour is a celebration of music, dance, and self-expression. With its themes of love, freedom, and empowerment, it's an experience that will leave fans feeling uplifted and inspired.
+Beyoncé's music has always been a source of comfort and strength for her fans, and this tour is no exception. 
+<br><br>
+Her commitment to her fans is evident in every aspect of the show, from the stunning costumes to the flawless choreography.
+The Renaissance World Tour is a once-in-a-lifetime experience that fans won't want to miss. With its high-energy performance, stunning visuals, and commitment to inclusivity, it's an event that will be remembered for years to come.
+</p>
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+	</div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story4', this)">Read More</a>
+            </div>
+	</div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleReadMore(storyId, element) {
+            const content = document.getElementById(storyId);
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.textContent = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                element.textContent = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment - NEWS WAVE</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #7A288A;
+        }
+        .card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #575757;
+        }
+        .collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expanded {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+        footer p {
+            font-size: 16px;
+        }
+.comment-box-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #7A288A;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button.post-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.post-button:hover {
+    background: linear-gradient(90deg, #0033FF, #7A288A, #FF69B4);
+}
+
+#commentSection {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment strong {
+    color: #7A288A;
+}
+
+.comment p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="Politics.html">Politics</a>
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="Mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Mental Health Section</h2>
+            <p>Get the latest on all things mental health to keep you informed and aware on how to care for your mental health.</p>
+        </div>
+        <div class="card">
+	<h2>Celebrity Opens Up About Mental Health Struggles</h2>
+            <img src="images/simone.jpg" alt="simone" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                  <p class="story-summary">A popular local celebrity, known for their music and acting career, spoke publicly about their struggles with depression and anxiety.</p>
+                <div class="collapse" id="story1">
+                    <p>In a candid interview, they shared about their experiences, from feeling overwhelmed by the pressures of fame to struggling with self-doubt and low self-esteem.
+The celebrity's bravery inspired many to share their own stories and seek help. 
+
+<br><br>
+Fans took to social media to thank them for speaking out, saying that their honesty had given them the courage to face their own struggles. One fan wrote, "I've been struggling with depression for years, but hearing that someone I admire has gone through the same thing makes me feel less alone."
+The celebrity's decision to speak out also sparked a wider conversation about mental health in the entertainment industry. 
+<br><br>
+Many others in the industry began to share their own struggles, highlighting the need for better support and resources. The celebrity's bravery has shown that even in the spotlight, it's okay to not be okay, and that seeking help is a sign of strength, not weakness.
+The celebrity's interview also highlighted the importance of self-care and seeking help. They spoke about the therapy sessions that had helped them cope with their struggles, and the support of loved ones that had kept them going. Their message was clear: mental health matters, and seeking help is essential to living a happy, healthy life.
+</p>
+<div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story1', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+	<h2>Mental Health Support Group Formed in Blantyre</h2>
+            <img src="images/mental.jpg" alt="mental" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                
+                <p class="story-summary">A group of individuals struggling with mental health issues came together to form a support group in Blantyre.</p>
+                <div class="collapse" id="story2">
+                    <p>The group, which meets weekly, provides a safe space for members to share their experiences and receive support from others who understand their struggles.
+The group was founded by a local resident who had struggled with depression and anxiety for years. 
+<br><br>
+She found solace in online support groups, but longed for a face-to-face community where she could connect with others who shared her struggles. With the help of a local therapist, she established the support group, which has grown to include over 20 members.
+The group's meetings are structured around a theme or topic, such as coping with stress or managing relationships.
+<br><br>
+Members share their experiences, offer advice, and provide emotional support. The group's leader, a trained therapist, facilitates the discussions and ensures that everyone feels heard and respected.
+Members have reported feeling a sense of belonging and connection that they hadn't experienced before. One member, who had struggled with social anxiety, said, "I used to feel like I
+You...One member, who had struggled with social anxiety, said, "I used to feel like I was alone in my struggles, but this group has shown me that I'm not alone. We're all in this together."
+
+<br><br>
+The group has also provided a safe space for members to share their struggles without fear of judgment. One member, who had been struggling with suicidal thoughts, said, "I was ashamed to talk about my feelings, but this group has shown me that it's okay to not be okay. They've helped me find resources and support that I didn't know existed."
+The group's impact has extended beyond its members, too. 
+<br><br>
+Family and friends of members have reported seeing a positive change in their loved ones, and some have even joined the group themselves. The group's leader notes, "We're not just a support group; we're a community. We're changing the conversation around mental health, one meeting at a time."
+As the group continues to grow, its members are looking to expand their reach. They're planning to partner with local organizations to offer workshops and resources to the wider community. Their goal is to create a mental health movement that spreads across the country, one support group at a time.
+</p>
+<div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story2', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+<h2>Free Mental Health Services Offered at Local Clinic</h2>         
+   <img src="images/mzu.jpg" alt="mzu" style="width:80%; border-radius: 10px;">
+            <div class="content">
+              <p class="story-summary">A healthcare clinic in Mzuzu offered free mental health services for the month of May.</p>
+                <div class="collapse" id="story3">
+                    <p>
+Providing access to counseling and therapy for those who cannot afford it. The clinic saw an influx of patients seeking help, demonstrating the need for affordable mental health services in the community.
+The clinic's decision to offer free services was inspired by the growing need for mental health support in the community.
+
+<br><br>
+The clinic's director noted, "We've seen a significant increase in patients struggling with mental health issues, but many can't afford the services they need. We wanted to do something to help."
+The clinic's services were offered by trained therapists and counselors, who provided individual and group sessions. 
+
+<br><br>
+Patients were able to receive support for a range of issues, from anxiety and depression to trauma and relationships. The clinic also offered resources and referrals for those who needed ongoing support.
+The clinic's offer of free services was met with gratitude from the community. 
+
+<br><br>
+Patients reported feeling seen and heard, and many said that the services had been a lifeline. One patient, who had struggled with depression for years, said, "I've never been able to afford therapy before, but thanks to the clinic, I've been able to get the help I need. I feel like I've finally found hope."
+The clinic's initiative has inspired other healthcare providers to follow suit, highlighting the need for affordable mental health services across the country. As the clinic's director noted, "Mental health is just as important as physical health, and it's time we start treating it that way."</p>
+<div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story3', this)">Read More</a>
+            </div>
+	</div>
+        <div class="card">
+	<h2>Mental Health Awareness Month: Let's Break the Stigma</h2>
+            <img src="images/aware.jpg" alt="aware" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <p class="story-summary">This May, the mental health community came together to raise awareness about the importance of mental wellness. </p>
+                <div class="collapse" id="story4">
+                    <p>
+Organizations and individuals shared their stories, struggles, and triumphs on social media using the hashtag #BreakTheStigma. The campaign reached millions, sparking conversations and inspiring people to seek help.
+The campaign was led by mental health advocates who have experienced the impact of stigma firsthand. 
+
+<br><br>
+They shared their personal stories, highlighting the importance of speaking openly about mental health. One advocate, who struggled with anxiety and depression, spoke about how the stigma surrounding mental illness prevented her from seeking help for years. She encouraged others to share their stories, saying, "By speaking out, we can break the silence and create a supportive community for those who need it most."
+The campaign also featured educational resources and tips for maintaining good mental health. 
+<br><br>
+Many people shared their own self-care routines, including exercise, meditation, and spending time in nature. Others shared resources for seeking help, such as hotlines and online support groups. The campaign's message was clear: mental health matters, and seeking help is a sign of strength, not weakness.
+As the campaign gained momentum, people from all over the country began to share their stories and experiences. 
+
+<br><br>
+A father shared about his struggles with postpartum depression, while a student spoke about the pressure to succeed and the toll it took on her mental health. The stories were raw, honest, and relatable, and they resonated with people from all walks of life.
+The #BreakTheStigma campaign showed that mental health awareness is not just a one-month effort, but a year-round commitment. It reminded us that mental health is just as important as physical health and that seeking help is essential to living a happy, healthy life. As the campaign came to a close, the mental health community looked forward to continuing the conversation and working towards a future where mental illness is met with understanding and support.
+</p>
+<div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story4', this)">Read More</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleReadMore(storyId, element) {
+            const content = document.getElementById(storyId);
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.textContent = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                element.textContent = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>

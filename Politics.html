@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment - NEWS WAVE</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #7A288A;
+        }
+        .card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #575757;
+        }
+        .collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expanded {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+        footer p {
+            font-size: 16px;
+        }
+.comment-box-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #7A288A;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button.post-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.post-button:hover {
+    background: linear-gradient(90deg, #0033FF, #7A288A, #FF69B4);
+}
+
+#commentSection {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment strong {
+    color: #7A288A;
+}
+
+.comment p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="Politics.html">Politics</a>
+        <a href="Contact us.html">Contact Us</a>
+        <a href="Mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Political Section</h2>
+            <p>Get the latest entertainment news, celebrity gossip, and the hottest movie and TV show reviews.</p>
+        </div>
+        <div class="card">
+	<h2>Malawi's President Chakwera Vows to Fight Corruption</h2> 
+           <img src="images/chake.jpg" alt="chake" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <p class="story-summary">Malawi's President Lazarus Chakwera has pledged to tackle corruption in the country.</p>
+                <div class="collapse" id="story1">
+                    <p>
+which has been a major obstacle to economic development. In his inaugural address, Chakwera vowed to "drain the swamp" of corruption and ensure that those found guilty are held accountable. He also announced plans to establish an independent anti-corruption agency to investigate and prosecute cases.
+Chakwera's commitment to fighting corruption has been welcomed by many Malawians, who have grown tired of the corruption and nepotism that has plagued the country for years. 
+
+
+<br><br>
+The new president has also promised to review contracts and deals signed by the previous government, which have been criticized for being opaque and fraudulent.
+However, some have expressed skepticism about Chakwera's ability to deliver on his promises, given the entrenched nature of corruption in Malawi's political and economic systems. Others have pointed out that the president's own party, the Malawi Congress Party, has been accused of corruption and nepotism in the past.
+Despite these challenges, Chakwera remains committed to his anti-corruption agenda. 
+
+<br><br>
+He has already taken steps to reform the country's financial management systems and has announced plans to introduce legislation aimed at strengthening transparency and accountability.
+As Malawi looks to the future, it remains to be seen whether Chakwera's efforts will be successful in rooting out corruption and promoting economic development. However, his commitment to this critical issue has given many Malawians hope for a better future.
+</p>
+
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story1', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+<h2>Malawi's Opposition Leader Calls for Electoral Reform</h2>
+            <img src="images/atu.jpg" alt="atu" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <p class="story-summary">Malawi's opposition leader, Atupele Muluzi, has called for electoral reform in the country. </p>
+                <div class="collapse" id="story2">
+                    <p>
+Citing concerns about the integrity of the electoral process. Muluzi, who leads the United Democratic Front (UDF), has been a vocal critic of the country's electoral system, which he claims is rigged against opposition parties.
+Muluzi's calls for reform come after the disputed 2020 presidential election, which was marred by allegations of fraud and irregularities. 
+<br><br>
+The opposition leader has accused the ruling party of manipulating the electoral process to maintain its grip on power.
+The UDF has proposed a range of reforms, including the introduction of a new electoral law, the establishment of an independent electoral commission, and the use of biometric technology to prevent fraud. Muluzi has also called for the prosecution of those found guilty of electoral offenses.
+The ruling party has dismissed Muluzi's calls for reform, accusing him of trying to discredit the electoral process. 
+<br><br>
+However, many Malawians support the opposition leader's demands, citing concerns about the credibility of the electoral system.
+As Malawi looks to the future, it remains to be seen whether Muluzi's efforts will be successful in promoting electoral reform. However, his commitment to this critical issue has given many Malawians hope for a more democratic and accountable political system.
+</p>
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story2', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+<h2>Biden Administration Announces Plan to Address Climate Change</h2>
+            <img src="images/bi.jpg" alt"bi" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <h2>TV Show Highlights</h2>
+                <p class="story-summary">The Biden administration has announced a comprehensive plan to address climate change. </p>
+                <div class="collapse" id="story3">
+                    <p>
+which includes a range of measures aimed at reducing greenhouse gas emissions and promoting clean energy. The plan, which was unveiled by President Joe Biden in a speech at the White House, includes a commitment to achieve net-zero emissions by 2050.
+The plan also includes a range of executive actions, including the re-entry of the United States into the Paris Climate Agreement. 
+<br><br>
+The establishment of a new climate change task force, and the introduction of new regulations aimed at reducing emissions from the energy and transportation sectors.
+The administration's plan has been welcomed by environmental groups and Democrats, who have praised the president's commitment to addressing the climate crisis. 
+<br><br>
+However, Republicans have criticized the plan, citing concerns about the impact on the economy and jobs.
+Despite these challenges, the Biden administration remains committed to its climate change agenda. 
+<br><br>
+The president has announced plans to work with Congress to introduce legislation aimed at promoting clean energy and reducing emissions.
+As the United States looks to the future, it remains to be seen whether the Biden administration's efforts will be successful in addressing the climate crisis. However, the president's commitment to this critical issue has given many Americans hope for a more sustainable future.
+</p>
+
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story3', this)">Read More</a>
+            </div>
+	</div>
+	<div class="card">
+	<h2>Navalny Sentenced to Prison Amid Crackdown on Opposition</h2>
+            <img src="images/russia.jpg" alt="russia" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <h2>TV Show Highlights</h2>
+                <p class="story-summary">Russian opposition leader Alexei Navalny has been sentenced to prison for two and a half years.</p>
+                <div class="collapse" id="story4">
+                    <p> 
+
+Amid a crackdown on opposition to the government of President Vladimir Putin. Navalny, who was arrested in January after returning to Russia from Germany, was found guilty of violating the terms of a suspended sentence in a case that he claims was politically motivated.
+The sentence has been condemned by human rights groups and Western governments, who have accused Russia of persecuting political opponents and suppressing dissent.
+<br><br>
+Navalny's supporters have vowed to continue protesting and demanding his release, despite a growing crackdown on opposition activity.
+The sentence comes amid a wider crackdown on opposition to the Putin government, which has seen a number of opposition figures arrested or forced into exile. 
+<br><br>
+The government has also introduced new laws aimed at restricting political activity and limiting the ability of opposition groups to organize.
+As Russia looks to the future, it remains to be seen whether the government's crackdown on opposition will be successful in silencing dissent. However, the sentence of Navalny and the wider crackdown on opposition have raised concerns about the future of democracy and human rights in Russia.</p>
+
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story4', this)">Read More</a>
+            </div>
+        
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleReadMore(storyId, element) {
+            const content = document.getElementById(storyId);
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.textContent = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                element.textContent = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>

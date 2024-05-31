@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS WAVE</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .card p {
+            color: #000000;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #575757;
+        }
+        .collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expanded {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        .news-item {
+            position: relative;
+        }
+        .news-item:hover {
+            cursor: pointer;
+        }
+        .news-item:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            animation: crawl 2s linear infinite;
+        }
+        @keyframes crawl {
+            0% { left: 0; }
+            100% { left: 100%; }
+        }
+        .cool-feature {
+            background: linear-gradient(to left, #8B0A1A, #1A1D23);
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .story-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .story-card {
+            flex: 0 1 calc(33% - 20px);
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .story-card img {
+            width: 100%;
+            height: auto;
+        }
+        .story-card .content {
+            padding: 20px;
+        }
+        .story-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .story-card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .story-card {
+                flex: 0 1 100%;
+            }
+        }
+        footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body> 
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="politic.html">Politics</a>
+        <a href="Contact us.html">Contact Us</a>
+        <a href="mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+
+    <div id="home" class="container">
+        <div class="card">
+            <h2>Welcome to NEWS WAVE</h2>
+            <p>Discover the latest news and updates across various categories. Stay tuned for amazing content!</p>
+        </div>
+        <div class="story-container">
+            <div class="story-card">
+                <img src="images/charts.jpg" alt="charts">
+                <div class="content">
+                    <h2>THE CHART BATTLE</h2>
+                    <p>The Cold war between Billie Eilish and Taylor Swift for the #1 spot in the charts.</p>
+                </div>
+            </div>
+            <div class="story-card">
+                <img src="images/vs.jpg" alt="vs">
+                <div class="content">
+                    <h2>DRAKE VS KENDRICK LAMAR</h2>
+                    <p>The Rap war that has fans at the edge of their seats.</p>
+                </div>
+            </div>
+            <div class="story-card">
+                <img src="images/silver.jpg" alt="silver">
+                <div class="content">
+                    <h2>SILVER STRIKERS CAN'T BE STOPPED</h2>
+                    <p>The 2024 TNM super league has people wondering if the young will take the league.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sports" class="container">
+        <div class="card">
+            <h2>Sports Section</h2>
+            <p>Catch up on the latest sports news, live scores, and exciting highlights from your favorite games.</p>
+            <a href="Sports.html" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <div id="entertainment" class="container">
+        <div class="card">
+            <h2>Entertainment Section</h2>
+            <p>Get the latest entertainment news, celebrity gossip, and the hottest movie and TV show reviews.</p>
+            <a href="Entertainment.html" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <div id="politics" class="container">
+        <div class="card">
+            <h2>Politics Section</h2>
+            <p>Stay updated with the latest political news, discussions, and analysis from around the world.</p>
+            <a href="Politics.html" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <div id="mental-health" class="container">
+        <div class="card">
+            <h2>Mental Health Section</h2>
+            <p>Stay informed about the latest health tips, wellness advice, and medical breakthroughs.</p>
+            <a href="mental health.html" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <div id="about" class="container">
+        <div class="card">
+            <h2>About Us & Site History</h2>
+            <p>Learn more about our mission, values, and the team behind this amazing website. Press "Read More" to dive into our journey.</p>
+            <div id="aboutContent" class="collapse">
+                <p>Detailed history of the website...</p>
+            </div>
+            <span class="read-more" onclick="toggleAboutContent()">Read More</span>
+        </div>
+    </div>
+
+    <div id="contact" class="container">
+        <div class="card">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Reach out to us through our contact form or via email.</p>
+            <a href="Contact us.html" class="read-more">Read More</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Latest & Trending News</h2>
+            <p>For the latest news on all topics from entertainment to sports to mental health.</p>
+            <div id="extraContent" class="collapse">
+                <p class="news-item"><span class="cool-feature">Trending</span><strong>P DIDDY RELEASES AN APOLOGY VIDEO TO THE PRESS</strong></p>
+                <p class="news-item"><span class="cool-feature">Trending</span><strong>TAYLOR SWIFT AND BILLIE EILISH BATTLE FOR THE TOP OF THE BILLBOARD CHARTS</strong></p>
+                <p class="news-item"><span class="cool-feature">Trending</span><strong>THERAPIST IN NEW JERSEY ARRESTED FOR OVERDOSING PATIENTS ON XANAX</strong></p>
+            </div>
+            <span class="read-more" onclick="toggleReadMore()">Read More</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleReadMore() {
+            const content = document.getElementById('extraContent');
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+            }
+        }
+
+        function toggleAboutContent() {
+            const content = document.getElementById('aboutContent');
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+            }
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

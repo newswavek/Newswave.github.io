@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports- NEWS WAVE</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #7A288A;
+        }
+        .card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #575757;
+        }
+        .collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expanded {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+        footer p {
+            font-size: 16px;
+        }
+.comment-box-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #7A288A;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button.post-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button.post-button:hover {
+    background: linear-gradient(90deg, #0033FF, #7A288A, #FF69B4);
+}
+
+#commentSection {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment strong {
+    color: #7A288A;
+}
+
+.comment p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="Politics.html">Politics</a>
+        <a href="Contact us.html">Contact Us</a>
+        <a href="Mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Sports Section</h2>
+            <p>Get the latest Sports news, Scores,Transfer news and Updates on games from all leagues</p>
+        </div>
+        <div class="card">
+        <h2>Malawi's National Football Team Qualifies for AFCON</h2>   
+	 <img src="images/team.jpg" alt="team" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <p class="story-summary">Malawi's national football team, the Flames, have qualified for the Africa Cup of Nations (AFCON) for the first time in 13 years. (May 10, 2024)</p>
+                <div class="collapse" id="story1">
+                    <p>The team's qualification was secured after a 2-1 win over Botswana in a thrilling match at the Kamuzu Stadium in Blantyre. The Flames' coach, Mario Marinica, praised the team's determination and hard work, saying, "This is a historic moment for Malawian football, and we're proud to have made it to AFCON."
+The qualification has sparked widespread celebrations across Malawi, with fans taking to social media to congratulate the team. 
+
+<br><br>
+The Flames will face stiff competition at AFCON, but their qualification is a testament to the team's growth and potential.
+Malawi's President, Lazarus Chakwera, has also congratulated the team, saying, "This achievement is not just for the football team, but for the entire nation. 
+
+<br><br>
+We're proud to see our team making us proud on the international stage."
+The Flames' qualification has also boosted the country's football development, with many young players looking up to the team as role models. The team's success is expected to inspire a new generation of footballers in Malawi.
+The Africa Cup of Nations is scheduled to take place in July, and the Flames will face off against some of the continent's top teams. 
+<br>
+Despite the tough competition, the team is confident and ready to make a mark on the international stage.
+</p>
+ <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story1', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+	<h2>Malawi's Netball Team Wins Gold at Africa Championships</h2>
+	<video width="640" height="360" controls>
+                <source src="videos/net.mp4" type="videos/mp4">
+               </video>
+            <div class="content">
+                <p class="story-summary">Malawi's national netball team, the Queens, have won gold at the 2024 Africa Netball Championships,defeating South Africa 54-53 in a thrilling final. </p>
+                <div class="collapse" id="story2">
+                    <p>The Queens' victory marks the team's first-ever gold medal at the championships and cements their position as a force to be reckoned with in African netball. The team's coach, Peace Chawinga-Kaluwa, praised the players for their hard work and dedication, saying, "This win is a testament to the team's commitment to excellence and their passion for the sport."
+The Queens' victory has sparked widespread celebrations across Malawi.
+
+<br><br>
+with fans taking to social media to congratulate the team. The team's success is a boost to netball development in Malawi and a source of national pride.
+The Africa Netball Championships brought together some of the continent's top teams, and the Queens' victory is a testament to their skill and determination. 
+
+<br><br>
+The team's success is expected to inspire a new generation of netballers in Malawi.
+The Queens' gold medal win has also earned them a spot at the 2024 Netball World Cup, where they will face off against some of the world's top teams. Despite the tough competition, the team is confident and ready to make a mark on the international stage.
+The Malawi Netball Association has also praised the team's achievement, saying, "This win is a historic moment for Malawian netball, and we're proud to see our team making us proud on the international stage."
+</p>
+	 <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story2', this)">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+	<h2>LeBron James Becomes NBA's All-Time Leading Scorer</h2>
+            <img src="images/bron.jpg" alt="bron" style="width:80%; border-radius: 10px;">
+            <div class="content">
+                <p class="story-summary">LeBron James has made history by becoming the NBA's all-time leading scorer, surpassing Kareem Abdul-Jabbar's record of 38,387 points.</p>
+                <div class="collapse" id="story3">
+                    <p>
+James, who plays for the Los Angeles Lakers, achieved the milestone in a game against the Oklahoma City Thunder, scoring 38 points to bring his total to 38,411. The achievement is a testament to James' incredible talent, work ethic, and longevity in the sport.
+James' record-breaking moment was met with a standing ovation from the crowd, and he was congratulated by Abdul-Jabbar himself. 
+
+<br><br>
+The NBA has also praised James' achievement, saying, "LeBron James is a once-in-a-generation player who has consistently pushed the boundaries of what's possible on the court."
+James' achievement has sparked widespread celebrations across the NBA, with many players and fans taking to social media to congratulate him.
+<br><br> 
+His record-breaking moment is a testament to his dedication to the sport and his legacy as one of the greatest basketball players of all time.
+The Los Angeles Lakers have also praised James' achievement, saying, "LeBron James is a true legend of the game, and we're honored to have him on our team.
+
+<br><br> 
+His record-breaking moment is a testament to his hard work and dedication to excellence."
+James' achievement has also sparked a new generation of basketball fans, with many young players looking up to him as a role model. His legacy is expected to continue inspiring and influencing the sport for years to come.
+</p>
+	 <div class="comment-box-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="post-button">Post</button>
+        </form>
+        <div id="commentSection"></div>
+    </div>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const commentSection = document.getElementById('commentSection');
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+            commentSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story3', this)">Read More</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleReadMore(storyId, element) {
+            const content = document.getElementById(storyId);
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.textContent = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                element.textContent = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>

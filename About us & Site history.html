@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment - NEWS WAVE</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #7A288A;
+        }
+        .card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #575757;
+        }
+        .collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expanded {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="Politics.html">Politics</a>
+        <a href="Contact us.html">Contact Us</a>
+        <a href="Mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>About Us & Our History</h2>
+            <p>Get the latest entertainment news, celebrity gossip, and the hottest movie and TV show reviews.</p>
+        </div>
+        <div class="card">
+            <img src="images/logo.jpg" alt="logo" style="width:100%; border-radius: 10px;">
+            <div class="content">
+                <h2>Our Story</h2>
+                <p class="story-summary">Get to know who is behind News Wave and why it exist.</p>
+                <div class="collapse" id="story1">
+                    <p>Kelvin Kansasi was a student at the Malawi Institute of Journalism when his journey into web design began. One day, he was assigned a group project that required creating a website. Unfortunately, his group members were less than enthusiastic about contributing, leaving Kelvin to tackle the project on his own. Determined to succeed, he took on the challenge, diving deep into the world of web design.<br><br>
+
+Working tirelessly, Kelvin taught himself the intricacies of HTML,and CSS,. As he crafted the website from scratch, he found himself falling in love with the process.<br><br>
+The creativity, problem-solving, and endless possibilities of web design captivated him. By the time the project was completed, not only had Kelvin earned top marks, but he had also discovered a new passion.<br><br>
+
+This newfound love for web design inspired Kelvin to start his own company. Armed with just his laptop and the skills he had acquired, he began offering his services to local businesses and individuals. His dedication and talent quickly garnered attention, and his client base grew steadily. Each new project was an opportunity to learn and improve, solidifying his reputation as a reliable and innovative web designer.
+
+<br><br>As his business expanded, Kelvin invested in better equipment and further education to enhance his expertise. He continued to push the boundaries of his creativity, always striving to deliver the best possible results for his clients. His journey from a solo student project to a successful web design company is a testament to his passion and perseverance.
+
+<br><br>Today, Kelvin Kansasi’s web design company is thriving. His story serves as an inspiration to many, showing that with determination and a willingness to pursue one’s passion, remarkable success can be achieved. Kelvin remains committed to creating beautiful, functional websites, driven by the love for web design that he discovered during that pivotal group project at the Malawi Institute of Journalism.</p>
+</p></p>
+                </div>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleReadMore('story1', this)">Read More</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleReadMore(storyId, element) {
+            const content = document.getElementById(storyId);
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.textContent = 'Read More';
+            } else {
+                content.classList.add('expanded');
+                element.textContent = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>

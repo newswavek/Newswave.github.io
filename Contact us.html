@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NEWS WAVE</title>
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            position: relative;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        nav a:hover::after {
+            transform: translateX(0);
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #7A288A;
+        }
+        .card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #FF69B4, #7A288A, #0033FF);
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #0033FF, #7A288A, #FF69B4);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-info div img {
+            margin-right: 10px;
+        }
+        .contact-info div span {
+            font-size: 1.1em;
+        }
+        @media (max-width: 768px) {
+            .story-card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .story-card {
+                flex: 0 1 100%;
+            }
+        }
+footer {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 2px solid #ffcc00;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NEWS WAVE</h1>
+    </header>
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Entertainment.html">Entertainment</a>
+        <a href="Politics.html">Politics</a>
+        <a href="Contact us.html">Contact Us</a>
+        <a href="Mental Health.html">Mental Health</a>
+        <a href="About us & Site History.html">About Us & Site History</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Reach out to us through our contact form or via email.</p>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+            <div class="contact-info">
+<h2>Location:</h2>
+<br>                
+<div>
+                    <img src="images/l.jpg" alt="l" width="24" height="24">
+                    <span>90021 kenyatta drive,BCA HILLS, Limbe, Blantrye</span>
+                </div><br>
+<h2> Email:</h2>
+<br>                <div>
+
+                    <img src="images/m.jpg" alt="m" width="24" height="24">
+                    <span>kikikansasi@gmail.com</span>
+                </div><br>
+<h2> Phone number: </h2>
+<br>
+                <div>
+                    <img src="images/p.jpg" alt="Phone Icon" width="24" height="24">
+                    <span>+265 (0) 884-7433-89</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleReadMore() {
+            const content = document.getElementById('extraContent');
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+            }
+        }
+
+        function toggleAboutContent() {
+            const content = document.getElementById('aboutContent');
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+            }
+        }
+    </script>
+<footer>
+        <div class="container">
+            <p>&copy; 2024 News Wave. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
